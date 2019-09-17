@@ -1,5 +1,5 @@
-#!/bin/sh
-set -eu
+#!/bin/bash
+set -e
 
 if [[ -z "$DATADOG_API_KEY" || -z "$EVENT_TITLE" || -z "$EVENT_TEXT" ]]; then
   echo "One or more required variables are missing: DATADOG_API_KEY, EVENT_TITLE, EVENT_TEXT"
@@ -21,7 +21,7 @@ curl  -X POST -H "Content-type: application/json" \
       "title": "'"${EVENT_TITLE}"'",
       "text": "'"${EVENT_TEXT}"'",
       "priority": "'"${EVENT_PRIORITY}"'",
-      "tags": '"${EVENT_TAGS}"',
+      "tags": "'"${EVENT_TAGS}"'",
       "alert_type": "'"${EVENT_ALERT_TYPE}"'",
       "source_type_name": "GITHUB"
 }' \
