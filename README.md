@@ -6,7 +6,7 @@ A GitHub Action that triggers DataDog Events.
 
 ```
 - name: DataDog Event
-  uses: jordan-simonovski/datadog-event-action@1.0.2
+  uses: jordan-simonovski/datadog-event-action@1.0.3
   env:
     DATADOG_API_KEY: ${{ secrets.DD_API_KEY }}
     EVENT_TITLE: Build Succeeded
